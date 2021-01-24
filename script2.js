@@ -1,34 +1,33 @@
 // create your variables here 
-var  timerCount;
+var timerCount;
 var questionAsked = document.getElementById("question");
+var correctAnswer;
 
-
-let time = 15;
-setTimeout ( function() {
+let time = 60;
+setTimeout(function () {
 
 }, 5000)
+btnStartGame.addEventListener("click", function () {
 var timeInterval = setInterval(() => {
-const timer = document.getElementById("timer");
-timer.textContent = "Time:" + time;
-// make this better, Dan said its sucks :( 
-time--;
-    if (time === 0){
-clearInterval(timeInterval);
-console.log("Time's Up!");
-alert("Your score is")
+    const timer = document.getElementById("timer");
+    timer.textContent = "Time:" + time;
+    // make this better, Dan said its sucks :( 
+    time--;
+    if (time === 0) {
+        clearInterval(timeInterval);
+        console.log("Time's Up!");
+        alert("Your score is")
     }
 }, 1000);
-
-
-btnStartGame.addEventListener("click", function () {
-    //hide start container 
-    document.querySelector(".start").style.display = "block";
-    //display the game container
-    document.querySelector(".game").style.display = "block";
-    document.querySelector(".btn-outline-dark").style.color = "pink";
-
-    //populate question into game container??z
 });
+// answer1.addEventListener("click", function () {
+//     document.getElementById("answer1").style.color = "blue";
+//     console.log("answer1");
+// });
+// btnStartGame.addEventListener("click", function () {
+//     document.getElementById("start").style.display = "block";
+//     document.getElementById("game").style.display = "block";
+// });
 
 
 
@@ -76,4 +75,28 @@ askQuestion(0);
 
 function buttonAlert(id) {
     alert(id)
+}
+
+// function click event for question answered 
+answer1.addEventListener("click", function () {
+    document.getElementById("answer1").style.color = "blue";
+    console.log("answer1");
+});
+answer2.addEventListener("click", function () {
+    document.getElementById("answer1").style.color = "blue";
+    console.log("answer2");
+});
+answer3.addEventListener("click", function () {
+    document.getElementById("answer3").style.color = "blue";
+    console.log("answer3");
+});
+answer4.addEventListener("click", function () {
+    document.getElementById("answer1").style.color = "blue";
+    console.log("answer4");
+});
+
+if (correctAnswer === true) {
+
+    list[Math.floor(math.random() * askQuestion.length)]
+
 }
