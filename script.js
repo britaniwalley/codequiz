@@ -14,6 +14,18 @@ var timer;
 var score = 0;
 scoreCount.textContent = score;
 
+setTimeout(() => {
+    const highScore = document.getElementById("high-score");
+    highScore.textContent = "";
+    const qBlock = document.getElementById("question-block");
+    qBlock.innerHTML = "Question 2 <br / >Answer 3<br />Answer4<br />";
+}, 5000);
+setInterval(() => {
+const timer = document.getElementById("timer");
+timer.textContent = "Time:" + time;
+// make this better, Dan said its sucks :( 
+time++;
+}, 1000);
 
 function startQuiz () {
     timerCount = 60;
