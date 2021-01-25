@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <header>
-            <a href=assets/highscores.html> High Scores:  <span id="high-score"></span></a>
+            <a href=assets/highscores.html> High Scores: <span id="high-score"></span></a>
             <span style="float: right" id="timer">Time: </span>
         </header>
         <h2 class="time" style="text-align: center;"></h2>
@@ -25,6 +25,12 @@
             <div class="row">
                 <div class="col text-center">
                     <h1> Code Quiz</h1>
+                </div>
+                <div class="row">
+                    <div class="instructions" style="text-align: center;" >
+                        <h3 id="placeholder1"> Answer the following questions correctly, you have 60 seconds!</h3>
+                        <h3 id="placeholder2"> Incorrect answers will result in a deduction of 10 seconds!</h3>
+                    </div>
                 </div>
             </div>
 
@@ -48,21 +54,17 @@
                     <h1 id="question"></h1>
                 </div>
             </div>
-        
-        <div  class="row">
-            <div class="col text-center">
-                <div class="btn-group-vertical"  role="group" aria-label="Basic example">
-                    <button id="answer1" onClick="buttonAlert"type="button" 
-                    class="btn btn-outline-dark"></button>
-                    <button id="answer2" onClick="buttonAlert"type="button" 
-                    class="btn btn-outline-dark"></button>
-                    <button id="answer3" onClick="buttonAlert"type="button" 
-                    class="btn btn-outline-dark"></button>
-                    <button id="answer4" onClick="buttonAlert"type="button" 
-                    class="btn btn-outline-dark"></button>
+
+            <div class="row">
+                <div class="col text-center">
+                    <div id= "answers" class="btn-group-vertical" role="group" aria-label="Basic example">
+                        <button id="answer1"  type="button" class="btn btn-outline-dark"></button>
+                        <button id="answer2"  type="button" class="btn btn-outline-dark"></button>
+                        <button id="answer3"  type="button" class="btn btn-outline-dark"></button>
+                        <button id="answer4"  type="button" class="btn btn-outline-dark"></button>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
 

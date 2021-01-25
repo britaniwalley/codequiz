@@ -14,18 +14,6 @@ var timer;
 var score = 0;
 scoreCount.textContent = score;
 
-setTimeout(() => {
-    const highScore = document.getElementById("high-score");
-    highScore.textContent = "";
-    const qBlock = document.getElementById("question-block");
-    qBlock.innerHTML = "Question 2 <br / >Answer 3<br />Answer4<br />";
-}, 5000);
-setInterval(() => {
-const timer = document.getElementById("timer");
-timer.textContent = "Time:" + time;
-// make this better, Dan said its sucks :( 
-time++;
-}, 1000);
 
 function startQuiz () {
     timerCount = 60;
@@ -81,7 +69,7 @@ var qIndex = 0;
 var currentQuestion = questions[qIndex]
 
 function askQuestion() {
-    qIndex = 1; 
+    qIndex = qIndex + 1; 
     currentQuestion = questions[qIndex];
     questionAsked.textContent = currentQuestion.question;
 
@@ -91,3 +79,19 @@ function askQuestion() {
         answerDiv.addEventListener("click", clickFunction);
     })
 }
+
+// {
+        //     question: "What does JS stand for?",
+        //     answers: [ "A. Just Saying", "B. JoJo Siwa", "C. JavaScript", "D. JamSession"],
+        //     correctAnswer: "C. JavaScript"
+        // }, 
+        // {
+        //     question: "What is CSS?",
+        //     answers: [ "A. Cats Singing Songs", "B. Cascading Style Sheets", "C. Code Style Semantics", "D. Camping Sleep Styles"],
+        //     correctAnswer: "B. Cascading Style Sheets"
+        // },
+        // {
+        //     question: "What does HTML stand for?",
+        //     answers: [ "A. Hyper Text Markup Language", "B. Happy Times Make Linguine", "C. Hyper Text Makeup Language", "D. Having Tater-Tots Mid-Lunge"],
+        //     correctAnswer: "A. Hyper Text Markup Language"
+        // }
