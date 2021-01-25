@@ -16,20 +16,28 @@
 <body>
     <div class="container">
         <header>
-            <a href=assets/highscores.html> High Scores: <span id="high-score"></span></a>
-            <span style="float: right" id="timer">Time: </span>
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="text-align: center; color: purple">Code Quiz</h5>
+                  <h6 class="card-subtitle mb-2 text">Answer the following questions correctly, you have 60 seconds!</h6>
+                  <p class="card-text">Incorrect answers will result in a deduction of 10 seconds!</p>
+                  <a href=assets/highscores.html style="float: left"> High Scores: <span id="high-score"></span></a>
+                  <span id="score-count " style="float: right; color: red"> Score: </span>
+                </div>
+              </div>
+            <span style="float: right" id="timer">Time: </span> 
         </header>
         <h2 class="time" style="text-align: center;"></h2>
         <div id="main"></div>
         <div class="container flex">
             <div class="row">
                 <div class="col text-center">
-                    <h1> Code Quiz</h1>
+                    <!-- <h1> Code Quiz</h1> -->
                 </div>
                 <div class="row">
                     <div class="instructions" style="text-align: center;" >
-                        <h3 id="placeholder1"> Answer the following questions correctly, you have 60 seconds!</h3>
-                        <h3 id="placeholder2"> Incorrect answers will result in a deduction of 10 seconds!</h3>
+                        <!-- <h3 id="placeholder1"> Answer the following questions correctly, you have 60 seconds!</h3> -->
+                        <!-- <h3 id="placeholder2"> Incorrect answers will result in a deduction of 10 seconds!</h3> -->
                     </div>
                 </div>
             </div>
@@ -70,49 +78,6 @@
 
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- <div class="row mx-auto mt-4" id="question-block" style="width: 400px;">
-            Questions <br>
-            Answer<br>
-            Answer<br>
-           <div class="start-button"><button type="button" class="btn btn-dark">Start Quiz</button> </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script> -->
-        <!-- <script>
-    let time = 0;
-    setTimeout ( function() {
-
-    }, 5000)
-    setTimeout(() => {
-        const highScore = document.getElementById("high-score");
-        highScore.textContent = "";
-        const qBlock = document.getElementById("question-block");
-        qBlock.innerHTML = "Question 2 <br / >Answer 3<br />Answer4<br />";
-    }, 5000);
-    setInterval(() => {
-const timer = document.getElementById("timer");
-timer.textContent = "Time:" + time;
-// make this better, Dan said its sucks :( 
-    time++;
-    }, 1000);  -->
-
-        <!-- </script> -->
 
         <script src="script2.js"></script>
 

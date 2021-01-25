@@ -2,13 +2,14 @@
 var timerCount;
 var startButton = document.querySelector(".start-button");
 var timerElement = document.querySelector("timer-count");
-var scoreCount = document.querySelector(".score-count");
+// var scoreCount = document.querySelector(".score-count");
 var questionAsked = document.getElementById("question");
 var placeHolder1 = document.getElementById("placeholder1");
 var placeHolder2 = document.getElementById("placeholder2")
 var correctAnswer;
 var questionNumber = 0
-
+var score = 0
+score.textContent = "Score:"  + score;
 //timer function
 
 // setTimeout(function () {
@@ -22,7 +23,7 @@ var timeInterval = setInterval(() => {
     time--;
     if (time === 0) {
         clearInterval(timeInterval);
-        console.log("Time's Up!");
+        alert("Time's Up!");
     }
 }, 1000);
 nextQuestion(0)
@@ -46,11 +47,6 @@ var list = [
     }
 ];
 
-// var qIndex = 0;
-
-// log the answer 
-// once the answer is logged, move on to next question 
-// these are functions 
 
 function askQuestion(qIndex) {
     
@@ -66,7 +62,7 @@ function askQuestion(qIndex) {
 // askQuestion();
 
 function nextQuestion(qIndex) {
-    askQuestion(qIndex);
+        askQuestion(qIndex);
         
       }
     
@@ -76,10 +72,12 @@ answer1.addEventListener("click", function () {
     console.log("answers1");
     if (list[questionNumber].correctAnswer === document.getElementById("answer1").textContent) {
         alert = "Correct!"
-        scoreCount = + 100 
+        score = score + 10;
+       
+        
     } else {
         alert = "Wrong Answer!"
-        timeInterval = (-10)
+        
     }
     console.log("questionNumber" + questionNumber)
     if (list.length -1!== questionNumber ) {
@@ -94,6 +92,8 @@ answer2.addEventListener("click", function () {
     console.log("answer2");
     if (list[questionNumber].correctAnswer === document.getElementById("answer2").textContent) {
         alert("Correct!");
+        score = score + 10;
+        
     } else {
         alert("Wrong Answer!");
     }
@@ -110,6 +110,8 @@ answer3.addEventListener("click", function () {
     console.log("answer3");
     if (list[questionNumber].correctAnswer === document.getElementById("answer3").textContent) {
         alert("Correct!");
+        score = score + 10;
+        
     } else {
         alert("Wrong Answer!");
     }
@@ -125,7 +127,8 @@ answer4.addEventListener("click", function () {
     document.getElementById("answer4");
     if (list[questionNumber].correctAnswer === document.getElementById("answer4").textContent) {
         alert("Correct!");
-
+        score = score + 10;
+        
     } else {
         alert("Wrong Answer!");
     }
@@ -134,21 +137,49 @@ answer4.addEventListener("click", function () {
         questionNumber += 1
     nextQuestion(questionNumber);
     } else {
-        window.location.href="assets/highscores.html"
+        window.location.href="./assets/highscores.html"
     }
     
 });
+function scoreCount() {
+    if (list[questionNumber].correctAnswer === document.getElementById("answer1").textContent) {
+        alert("Correct!");
+        scoreCount = score + 10;
+        console.log(score + 10);
+    } else {
+        timerCount = -10;
+    }
+    if (list[questionNumber].correctAnswer === document.getElementById("answer2").textContent) {
+        alert("Correct!");
+        scoreCount = score + 10;
+        console.log(score + 10);
+    } else {
+        timerCount = -10;
+    }
+    if (list[questionNumber].correctAnswer === document.getElementById("answer3").textContent) {
+        alert("Correct!");
+        scoreCount = score + 10;
+        console.log(score + 10);
+    } else {
+        timerCount = -10;
+    }
+    if (list[questionNumber].correctAnswer === document.getElementById("answer4").textContent) {
+        alert("Correct!");
+        scoreCount = score + 10;
+        console.log(score + 10);
+    } else {
+        timerCount = -10;
+    }
+}
 
-// function nextQuestion (userChoice) {
-//     console.log(userChoice)
-// }
-// nextQuestion();
 
 
-
-
-
-
-// for (i=0, i < qIndex.length, i++) {
-
-// }
+ function endGame() {
+     scoreCount.textContent = score;
+     answers.innerHTML = "";
+     displayBox.textContent = "";
+     timerCount =  0;
+     localStorage.setItem("score", score);
+     finalScoreText.textContent = "";
+     finalScore.textContent = localStorage.getItem("score");
+ }
