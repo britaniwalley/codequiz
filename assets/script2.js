@@ -9,11 +9,10 @@ var placeHolder2 = document.getElementById("placeholder2")
 var correctAnswer;
 var questionNumber = 0
 var score = 0
-score.textContent = "Score:"  + score;
+
 //timer function
 
-// setTimeout(function () {
-// }, 5000)
+
 let time = 60;
 btnStartGame.addEventListener("click", function () {
 var timeInterval = setInterval(() => {
